@@ -1,6 +1,7 @@
 # Dev
 node_modules
 build
+coverage
 
 # Environment variables
 .env
