@@ -8,12 +8,12 @@ import { UserAlreadyExistsError } from "./errors/user-already-exists-error";
 let usersRepository: InMemoryUsersRepository;
 let registerUseCase: RegisterUseCase;
 
-beforeEach(() => {
-	usersRepository = new InMemoryUsersRepository();
-	registerUseCase = new RegisterUseCase(usersRepository);
-});
-
 describe("Register Use Case", () => {
+	beforeEach(() => {
+		usersRepository = new InMemoryUsersRepository();
+		registerUseCase = new RegisterUseCase(usersRepository);
+	});
+
 	it("should be able to register", async () => {
 		const { user } = await registerUseCase.execute({
 			name: "John Doen",
